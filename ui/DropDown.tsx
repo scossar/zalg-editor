@@ -111,7 +111,7 @@ function DropDownItems({
   return (
     <DropDownContext.Provider value={contextValue}>
       <div
-        className="fixed flex flex-col items-start px-2 text-sm bg-white border rounded-sm border-slate-200 dropdown w-fit"
+        className="fixed flex flex-col items-start px-1 text-sm bg-white border rounded-sm border-slate-200 divide-y"
         ref={dropDownRef}
       >
         {children}
@@ -128,7 +128,7 @@ export default function DropDown({
   children,
 }: {
   disabled?: boolean;
-  buttonLabel?: string;
+  buttonLabel: string;
   buttonAriaLabel?: string;
   buttonClassName: string;
   blockType: BlockType;
@@ -188,12 +188,10 @@ export default function DropDown({
         onClick={() => setShowDropDown(!showDropDown)}
         ref={buttonRef}
       >
-        {buttonLabel && (
-          <span className="flex items-center p-2">
-            {buttonLabel}
-            <EditorIcon className="inline-block w-4 h-4 ml-2" id="caret-down" />
-          </span>
-        )}
+        <span className="flex items-center">
+          {buttonLabel}
+          <EditorIcon className="inline-block w-4 h-4 ml-2" id="caret-down" />
+        </span>
         <i className="chevron-down" />
       </button>
 

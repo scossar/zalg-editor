@@ -237,86 +237,72 @@ export default function ToolbarPlugin() {
     return (
       <DropDown
         disabled={disabled}
-        buttonClassName="toolbar-item block-controls px-2"
+        buttonClassName="p-2 hover:bg-slate-200"
         buttonLabel={blockTypeToBlockName[blockType]}
         buttonAriaLabel="Formatting options for text type"
         blockType={blockType}
       >
         <DropDownItem
-          className={`item my-1 flex items-start hover:bg-slate-100 ${dropdownActiveClass(
+          className={`w-full text-left p-2 hover:bg-slate-200 ${dropdownActiveClass(
             blockType === "paragraph"
           )}`}
           onClick={formatParagraph}
         >
-          <span className="text grow">
-            <EditorIcon className="inline-block w-4 h-4" id="paragraph" />{" "}
-            Paragraph
-          </span>
+          <EditorIcon className="inline-block w-4 h-4" id="paragraph" />{" "}
+          Paragraph
         </DropDownItem>
         <DropDownItem
-          className={`item my-1 hover:bg-slate-100 ${dropdownActiveClass(
+          className={`w-full text-left p-2 hover:bg-slate-200 ${dropdownActiveClass(
             blockType === "h1"
           )}`}
           onClick={() => formatHeading("h1")}
         >
-          <span className="text">
-            <EditorIcon id="heading-1" className="inline-block w-4 h-4" />{" "}
-            Heading 1
-          </span>
+          <EditorIcon id="heading-1" className="inline-block w-4 h-4" /> Heading
+          1
         </DropDownItem>
         <DropDownItem
-          className={`item my-1 hover:bg-slate-100 ${dropdownActiveClass(
+          className={`w-full text-left p-2 hover:bg-slate-200 ${dropdownActiveClass(
             blockType === "h2"
           )}`}
           onClick={() => formatHeading("h2")}
         >
-          <span className="text">
-            <EditorIcon id="heading-2" className="inline-block w-4 h-4" />{" "}
-            Heading 2
-          </span>
+          <EditorIcon id="heading-2" className="inline-block w-4 h-4" /> Heading
+          2
         </DropDownItem>
         <DropDownItem
-          className={`item my-1 hover:bg-slate-100 ${dropdownActiveClass(
+          className={`w-full text-left p-2 hover:bg-slate-200 ${dropdownActiveClass(
             blockType === "h3"
           )}`}
           onClick={() => formatHeading("h3")}
         >
-          <span className="text">
-            <EditorIcon id="heading-3" className="inline-block w-4 h-4" />{" "}
-            Heading 3
-          </span>
+          <EditorIcon id="heading-3" className="inline-block w-4 h-4" /> Heading
+          3
         </DropDownItem>
         <DropDownItem
-          className={`item my-1 hover:bg-slate-100 ${dropdownActiveClass(
+          className={`w-full text-left p-2 hover:bg-slate-200 ${dropdownActiveClass(
             blockType === "bullet"
           )}`}
           onClick={formatBulletList}
         >
-          <span className="text">
-            <EditorIcon id="fa-list-ul" className="inline-block w-4 h-4" />{" "}
-            Bullet List
-          </span>
+          <EditorIcon id="fa-list-ul" className="inline-block w-4 h-4" /> Bullet
+          List
         </DropDownItem>
         <DropDownItem
-          className={`item my-1 hover:bg-slate-100 ${dropdownActiveClass(
+          className={`w-full text-left p-2 hover:bg-slate-200 ${dropdownActiveClass(
             blockType === "number"
           )}`}
           onClick={formatNumberedList}
         >
-          <span className="text">
-            <EditorIcon id="fa-list-ol" className="inline-block w-4 h-4" />{" "}
-            Numbered List
-          </span>
+          <EditorIcon id="fa-list-ol" className="inline-block w-4 h-4" />{" "}
+          Numbered List
         </DropDownItem>
         <DropDownItem
-          className={`item my-1 hover:bg-slate-100 ${dropdownActiveClass(
+          className={`w-full text-left p-2 hover:bg-slate-200 ${dropdownActiveClass(
             blockType === "quote"
           )}`}
           onClick={formatQuote}
         >
-          <span className="text">
-            <EditorIcon id="quote" className="inline-block w-4 h-4" /> Quote
-          </span>
+          <EditorIcon id="quote" className="inline-block w-4 h-4" /> Quote
         </DropDownItem>
       </DropDown>
     );

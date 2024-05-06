@@ -111,7 +111,7 @@ function DropDownItems({
   return (
     <DropDownContext.Provider value={contextValue}>
       <div
-        className="fixed flex flex-col items-start px-1 text-sm bg-white border rounded-sm border-slate-200 dropdown w-fit"
+        className="fixed flex flex-col items-start px-2 text-sm bg-white border rounded-sm border-slate-200 dropdown w-fit"
         ref={dropDownRef}
       >
         {children}
@@ -137,7 +137,7 @@ export default function DropDown({
   const dropDownRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const [showDropDown, setShowDropDown] = useState(false);
-  const dropDownPadding = 4;
+  const dropDownPadding = 2;
 
   const handleClose = () => {
     setShowDropDown(false);

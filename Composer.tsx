@@ -17,7 +17,7 @@ export default function Composer() {
     <>
       <LexicalComposer initialConfig={initialConfig}>
         <HistoryPlugin />
-        <div className="relative border border-slate-400">
+        <div className="relative border rounded-sm border-slate-900">
           <Editor />
         </div>
       </LexicalComposer>

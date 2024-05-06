@@ -323,7 +323,7 @@ export default function ToolbarPlugin() {
   }
 
   return (
-    <div className="sticky flex items-center h-10 border toolbar border-b-slate-300 divide-x divide-slate-400">
+    <div className="sticky flex items-center h-10 py-1 border toolbar border-b-slate-300 divide-x divide-slate-200">
       <button
         disabled={!canUndo || !isEditable}
         onClick={() => {

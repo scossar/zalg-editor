@@ -323,20 +323,20 @@ export default function ToolbarPlugin() {
   }
 
   return (
-    <div className="sticky flex items-center h-8 border toolbar border-b-slate-300">
+    <div className="sticky flex items-center h-10 border toolbar border-b-slate-300 divide-x divide-slate-400">
       <button
         disabled={!canUndo || !isEditable}
         onClick={() => {
           activeEditor.dispatchCommand(UNDO_COMMAND, undefined);
         }}
         title="Undo"
-        className={`mr-1 p-1 rounded-full ${
-          !canUndo || !isEditable ? "bg-slate-200" : "bg-white"
+        className={`p-2 inline-block ${
+          !canUndo || !isEditable ? "bg-white" : "bg-white"
         }`}
         type="button"
         aria-label="Undo"
       >
-        <EditorIcon id="redo" className="w-3 h-3 scale-x-[-1]" />
+        <EditorIcon id="redo" className="w-4 h-4 scale-x-[-1]" />
       </button>
       <button
         disabled={!canRedo || !isEditable}
@@ -345,12 +345,12 @@ export default function ToolbarPlugin() {
         }}
         title="Redo"
         type="button"
-        className={`mr-1 p-1 rounded-full ${
-          !canRedo || !isEditable ? "bg-slate-200" : "bg-white"
+        className={`p-2 inline-block ${
+          !canRedo || !isEditable ? "bg-white" : "bg-white"
         }`}
         aria-label="Redo"
       >
-        <EditorIcon id="redo" className="w-3 h-3" />
+        <EditorIcon id="redo" className="w-4 h-4" />
       </button>
       <BlockFormatDropDown
         disabled={!isEditable}
@@ -362,39 +362,39 @@ export default function ToolbarPlugin() {
         onClick={() => {
           activeEditor.dispatchCommand(FORMAT_TEXT_COMMAND, "bold");
         }}
-        className={`mr-1 rounded-sm ${
+        className={`p-2 rounded-sm ${
           isBold ? "bg-blue-400 text-white" : "bg-white text-slate-900"
         }`}
         title="Bold"
         type="button"
         aria-label="Format text as bold"
       >
-        <EditorIcon className="w-4 h-4" id="bold" />
+        <EditorIcon className="w-5 h-5" id="bold" />
       </button>
       <button
         disabled={!isEditable}
         onClick={() => {
           activeEditor.dispatchCommand(FORMAT_TEXT_COMMAND, "italic");
         }}
-        className={`mr-1 rounded-sm ${
+        className={`p-2 rounded-sm ${
           isItalic ? "bg-blue-400 text-white" : "bg-white text-slate-900"
         }`}
         title="Italic"
         type="button"
         aria-label="Format text as italic"
       >
-        <EditorIcon className="w-4 h-4" id="italic" />
+        <EditorIcon className="w-5 h-5" id="italic" />
       </button>
       <button
         disabled={!isEditable}
-        className={`mr-1 rounded-sm ${
+        className={`p-2 rounded-sm ${
           isCode ? "bg-blue-400 text-white" : "bg-white text-slate-900"
         }`}
         onClick={() => {
           activeEditor.dispatchCommand(FORMAT_TEXT_COMMAND, "code");
         }}
       >
-        <EditorIcon className="w-4 h-4" id="code" />
+        <EditorIcon className="w-5 h-5" id="code" />
       </button>
     </div>
   );

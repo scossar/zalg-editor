@@ -125,14 +125,12 @@ export default function DropDown({
   buttonLabel,
   buttonAriaLabel,
   buttonClassName,
-  buttonIconClassName,
   children,
 }: {
   disabled?: boolean;
   buttonLabel?: string;
   buttonAriaLabel?: string;
   buttonClassName: string;
-  buttonIconClassName?: string;
   blockType: BlockType;
   children: ReactNode;
 }): React.JSX.Element {
@@ -190,11 +188,10 @@ export default function DropDown({
         onClick={() => setShowDropDown(!showDropDown)}
         ref={buttonRef}
       >
-        {buttonIconClassName && <span className={buttonIconClassName} />}
         {buttonLabel && (
-          <span className="flex items-center text dropdown-button-text">
+          <span className="flex items-center p-2">
             {buttonLabel}
-            <EditorIcon className="inline-block w-4 h-4" id="caret-down" />
+            <EditorIcon className="inline-block w-4 h-4 ml-2" id="caret-down" />
           </span>
         )}
         <i className="chevron-down" />

@@ -317,7 +317,9 @@ export default function ToolbarPlugin() {
         }}
         title="Undo"
         className={`p-2 inline-block ${
-          !canUndo || !isEditable ? "bg-white" : "bg-white"
+          !canUndo || !isEditable
+            ? "bg-slate-100 cursor-not-allowed"
+            : "bg-white"
         }`}
         type="button"
         aria-label="Undo"
@@ -332,7 +334,9 @@ export default function ToolbarPlugin() {
         title="Redo"
         type="button"
         className={`p-2 inline-block ${
-          !canRedo || !isEditable ? "bg-white" : "bg-white"
+          !canRedo || !isEditable
+            ? "bg-slate-100 cursor-not-allowed"
+            : "bg-white"
         }`}
         aria-label="Redo"
       >
@@ -349,7 +353,9 @@ export default function ToolbarPlugin() {
           activeEditor.dispatchCommand(FORMAT_TEXT_COMMAND, "bold");
         }}
         className={`p-2 rounded-sm ${
-          isBold ? "bg-blue-400 text-white" : "bg-white text-slate-900"
+          isBold
+            ? "bg-blue-400 text-white"
+            : "bg-white text-slate-900 hover:bg-slate-200"
         }`}
         title="Bold"
         type="button"
@@ -363,7 +369,9 @@ export default function ToolbarPlugin() {
           activeEditor.dispatchCommand(FORMAT_TEXT_COMMAND, "italic");
         }}
         className={`p-2 rounded-sm ${
-          isItalic ? "bg-blue-400 text-white" : "bg-white text-slate-900"
+          isItalic
+            ? "bg-blue-400 text-white"
+            : "bg-white text-slate-900 hover:bg-slate-200"
         }`}
         title="Italic"
         type="button"
@@ -374,7 +382,9 @@ export default function ToolbarPlugin() {
       <button
         disabled={!isEditable}
         className={`p-2 rounded-sm ${
-          isCode ? "bg-blue-400 text-white" : "bg-white text-slate-900"
+          isCode
+            ? "bg-blue-400 text-white"
+            : "bg-white text-slate-900 hover:bg-slate-200"
         }`}
         onClick={() => {
           activeEditor.dispatchCommand(FORMAT_TEXT_COMMAND, "code");

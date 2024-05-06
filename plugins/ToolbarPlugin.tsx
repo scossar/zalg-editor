@@ -234,6 +234,9 @@ export default function ToolbarPlugin() {
       }
     };
 
+    // TODO: possible issue where if the editor doesn't have focus,
+    // toolbar buttons that don't insert text can be clicked without doing anything
+    // make sure the editor will have focus, or give the editor focus when they're clicked.
     return (
       <DropDown
         disabled={disabled}
@@ -248,7 +251,6 @@ export default function ToolbarPlugin() {
           )}`}
           onClick={formatParagraph}
         >
-          <EditorIcon className="inline-block w-4 h-4" id="paragraph" />{" "}
           Paragraph
         </DropDownItem>
         <DropDownItem
@@ -257,8 +259,7 @@ export default function ToolbarPlugin() {
           )}`}
           onClick={() => formatHeading("h1")}
         >
-          <EditorIcon id="heading-1" className="inline-block w-4 h-4" /> Heading
-          1
+          Heading 1
         </DropDownItem>
         <DropDownItem
           className={`w-full text-left p-2 hover:bg-slate-200 ${dropdownActiveClass(
@@ -266,8 +267,7 @@ export default function ToolbarPlugin() {
           )}`}
           onClick={() => formatHeading("h2")}
         >
-          <EditorIcon id="heading-2" className="inline-block w-4 h-4" /> Heading
-          2
+          Heading 2
         </DropDownItem>
         <DropDownItem
           className={`w-full text-left p-2 hover:bg-slate-200 ${dropdownActiveClass(
@@ -275,8 +275,7 @@ export default function ToolbarPlugin() {
           )}`}
           onClick={() => formatHeading("h3")}
         >
-          <EditorIcon id="heading-3" className="inline-block w-4 h-4" /> Heading
-          3
+          Heading 3
         </DropDownItem>
         <DropDownItem
           className={`w-full text-left p-2 hover:bg-slate-200 ${dropdownActiveClass(
@@ -284,8 +283,7 @@ export default function ToolbarPlugin() {
           )}`}
           onClick={formatBulletList}
         >
-          <EditorIcon id="fa-list-ul" className="inline-block w-4 h-4" /> Bullet
-          List
+          Bullet List
         </DropDownItem>
         <DropDownItem
           className={`w-full text-left p-2 hover:bg-slate-200 ${dropdownActiveClass(
@@ -293,7 +291,6 @@ export default function ToolbarPlugin() {
           )}`}
           onClick={formatNumberedList}
         >
-          <EditorIcon id="fa-list-ol" className="inline-block w-4 h-4" />{" "}
           Numbered List
         </DropDownItem>
         <DropDownItem
@@ -302,7 +299,7 @@ export default function ToolbarPlugin() {
           )}`}
           onClick={formatQuote}
         >
-          <EditorIcon id="quote" className="inline-block w-4 h-4" /> Quote
+          Quote
         </DropDownItem>
       </DropDown>
     );

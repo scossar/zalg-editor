@@ -24,8 +24,7 @@ import {
 } from "react";
 import { createPortal } from "react-dom";
 
-//import Icon, { type AvailableIconIdTypes } from "~/components/Icon";
-import EditorIcon, { type AvailableIconIdTypes } from "../EditorIcon";
+import EditorIcon from "../EditorIcon";
 import { BlockType } from "../plugins/ToolbarPlugin";
 
 type DropDownContextType = {
@@ -127,7 +126,6 @@ export default function DropDown({
   buttonAriaLabel,
   buttonClassName,
   buttonIconClassName,
-  blockType,
   children,
 }: {
   disabled?: boolean;
@@ -142,21 +140,6 @@ export default function DropDown({
   const buttonRef = useRef<HTMLButtonElement>(null);
   const [showDropDown, setShowDropDown] = useState(false);
   const dropDownPadding = 4;
-
-  const blockTypeToIconId: Record<BlockType, AvailableIconIdTypes> = {
-    bullet: "list-bullet",
-    number: "list-bullet",
-    code: "code",
-    paragraph: "paragraph",
-    quote: "quote",
-    h1: "heading",
-    h2: "heading",
-    h3: "heading",
-    h4: "heading",
-    h5: "heading",
-    h6: "heading",
-    check: "list-bullet",
-  };
 
   const handleClose = () => {
     setShowDropDown(false);
@@ -210,12 +193,6 @@ export default function DropDown({
         {buttonIconClassName && <span className={buttonIconClassName} />}
         {buttonLabel && (
           <span className="flex items-center text dropdown-button-text">
-            {blockTypeToIconId?.[blockType] && (
-              <EditorIcon
-                id={blockTypeToIconId[blockType]}
-                className="inline-block w-4 h-4"
-              />
-            )}{" "}
             {buttonLabel}
             <EditorIcon className="inline-block w-4 h-4" id="caret-down" />
           </span>

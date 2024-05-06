@@ -6,7 +6,7 @@
  *    <svg...>
  *      <defs>
  *        <symbol viewBox="0 0 15 15" id="{iconId}" height="100%" width="100%">
- *          <path...></path>
+ *          <path... />
  *        </symbol>
  *        <symbol viewBox="0 0 15 15" id="{anotherIconId}" height="100%" width="100%">
  *          <path...></path>
@@ -37,7 +37,11 @@ export type AvailableIconIdTypes =
   | "fa-1"
   | "fa-2"
   | "fa-3"
-  | "fa-h";
+  | "fa-h"
+  | "heading-1"
+  | "heading-2"
+  | "heading-3"
+  | "list-ol";
 
 interface IconProps {
   id: AvailableIconIdTypes;

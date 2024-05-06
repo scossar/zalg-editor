@@ -260,8 +260,8 @@ export default function ToolbarPlugin() {
           onClick={() => formatHeading("h1")}
         >
           <span className="text">
-            <EditorIcon id="heading" className="inline-block w-4 h-4" /> Heading
-            1
+            <EditorIcon id="heading-1" className="inline-block w-4 h-4" />{" "}
+            Heading 1
           </span>
         </DropDownItem>
         <DropDownItem
@@ -271,8 +271,8 @@ export default function ToolbarPlugin() {
           onClick={() => formatHeading("h2")}
         >
           <span className="text">
-            <EditorIcon id="heading" className="inline-block w-4 h-4" /> Heading
-            2
+            <EditorIcon id="heading-2" className="inline-block w-4 h-4" />{" "}
+            Heading 2
           </span>
         </DropDownItem>
         <DropDownItem
@@ -282,8 +282,8 @@ export default function ToolbarPlugin() {
           onClick={() => formatHeading("h3")}
         >
           <span className="text">
-            <EditorIcon id="heading" className="inline-block w-4 h-4" /> Heading
-            3
+            <EditorIcon id="heading-3" className="inline-block w-4 h-4" />{" "}
+            Heading 3
           </span>
         </DropDownItem>
         <DropDownItem
@@ -293,7 +293,7 @@ export default function ToolbarPlugin() {
           onClick={formatBulletList}
         >
           <span className="text">
-            <EditorIcon id="list-bullet" className="inline-block w-4 h-4" />{" "}
+            <EditorIcon id="fa-list-ul" className="inline-block w-4 h-4" />{" "}
             Bullet List
           </span>
         </DropDownItem>
@@ -304,7 +304,7 @@ export default function ToolbarPlugin() {
           onClick={formatNumberedList}
         >
           <span className="text">
-            <EditorIcon id="list-bullet" className="inline-block w-4 h-4" />{" "}
+            <EditorIcon id="fa-list-ol" className="inline-block w-4 h-4" />{" "}
             Numbered List
           </span>
         </DropDownItem>

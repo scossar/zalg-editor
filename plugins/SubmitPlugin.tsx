@@ -1,15 +1,14 @@
-import { useFetcher } from "@remix-run/react";
+import type { FetcherWithComponents } from "@remix-run/react";
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
 import { $generateHtmlFromNodes } from "@lexical/html";
 import { $convertToMarkdownString, TRANSFORMERS } from "@lexical/markdown";
 
 type SubmitProps = {
   submitType: "html" | "markdown";
+  fetcher: FetcherWithComponents<unknown>;
 };
 
-export default function SubmitPlugin({ submitType }: SubmitProps) {
-  const fetcher = useFetcher();
-
+export default function SubmitPlugin({ submitType, fetcher }: SubmitProps) {
   const [editor] = useLexicalComposerContext();
 
   function handleSubmit() {

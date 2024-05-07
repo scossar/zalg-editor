@@ -10,7 +10,7 @@ export interface CustomFetcher {
 
 The `fetcher` is used by the `SubmitPlugin` component to submit the editor's data to the route's `action` function.
 
-Note: this is a work in progress. I'm using similar code in a couple of apps, so it made sense to extract it into a submodule.
+Note: this is a work in progress. I'm using similar code in a couple of apps - it made sense to extract it into a submodule.
 
 ## Development setup
 

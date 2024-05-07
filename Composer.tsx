@@ -3,6 +3,7 @@ import ZalgEditorTheme from "./themes/ZalgEditorTheme";
 import { EditorNodes } from "./editorNodes/EditorNodes";
 import { HistoryPlugin } from "@lexical/react/LexicalHistoryPlugin";
 import Editor from "./Editor";
+import SubmitPlugin from "./plugins/SubmitPlugin";
 
 export default function Composer() {
   const initialConfig = {
@@ -20,6 +21,7 @@ export default function Composer() {
         <div className="relative border rounded-sm border-slate-900">
           <Editor />
         </div>
+        <SubmitPlugin submitType="markdown" />
       </LexicalComposer>
     </>
   );

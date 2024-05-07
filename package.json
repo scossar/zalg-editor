@@ -1,0 +1,22 @@
+{
+  "name": "zalgeditor",
+  "version": "0.0.1",
+  "description": "A Lexical editor component",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scossar/zalg-editor.git"
+  },
+  "author": "scossar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/scossar/zalg-editor/issues"
+  },
+  "homepage": "https://github.com/scossar/zalg-editor#readme",
+  "peerDependencies": {
+    "lexical": "^0.14.5",
+    "@lexical/react": "^0.14.5"
+  }
+}

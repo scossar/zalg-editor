@@ -1,11 +1,14 @@
-import type { FetcherWithComponents } from "@remix-run/react";
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
 import { $generateHtmlFromNodes } from "@lexical/html";
 import { $convertToMarkdownString, TRANSFORMERS } from "@lexical/markdown";
 
-type SubmitProps = {
+export interface CustomFetcher {
+  submit: (data: FormData, options: { method: string }) => void;
+}
+
+export type SubmitProps = {
   submitType: "html" | "markdown";
-  fetcher: FetcherWithComponents<unknown>;
+  fetcher: CustomFetcher;
 };
 
 export default function SubmitPlugin({ submitType, fetcher }: SubmitProps) {

@@ -3,14 +3,9 @@ import ZalgEditorTheme from "./themes/ZalgEditorTheme";
 import { EditorNodes } from "./editorNodes/EditorNodes";
 import { HistoryPlugin } from "@lexical/react/LexicalHistoryPlugin";
 import Editor from "./Editor";
-import SubmitPlugin from "./plugins/SubmitPlugin";
-import type { FetcherWithComponents } from "@remix-run/react";
-type ComposerProps = {
-  submitType: "html" | "markdown";
-  fetcher: FetcherWithComponents<unknown>;
-};
+import SubmitPlugin, { SubmitProps } from "./plugins/SubmitPlugin";
 
-export default function Composer({ submitType, fetcher }: ComposerProps) {
+export default function Composer({ submitType, fetcher }: SubmitProps) {
   const initialConfig = {
     namespace: "Zalgorithm",
     onError: (error: Error) => {

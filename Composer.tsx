@@ -5,7 +5,11 @@ import { HistoryPlugin } from "@lexical/react/LexicalHistoryPlugin";
 import Editor from "./Editor";
 import SubmitPlugin, { SubmitProps } from "./plugins/SubmitPlugin";
 
-export default function Composer({ submitType, fetcher }: SubmitProps) {
+export default function Composer({
+  submitType,
+  fetcher,
+  toggleOpenState,
+}: SubmitProps) {
   const initialConfig = {
     namespace: "Zalgorithm",
     onError: (error: Error) => {
@@ -21,7 +25,11 @@ export default function Composer({ submitType, fetcher }: SubmitProps) {
         <div className="relative border rounded-sm border-slate-900">
           <Editor />
         </div>
-        <SubmitPlugin submitType={submitType} fetcher={fetcher} />
+        <SubmitPlugin
+          submitType={submitType}
+          fetcher={fetcher}
+          toggleOpenState={toggleOpenState}
+        />
       </LexicalComposer>
     </>
   );

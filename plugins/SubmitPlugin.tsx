@@ -9,9 +9,14 @@ export interface CustomFetcher {
 export type SubmitProps = {
   submitType: "html" | "markdown";
   fetcher: CustomFetcher;
+  toggleOpenState?: () => void;
 };
 
-export default function SubmitPlugin({ submitType, fetcher }: SubmitProps) {
+export default function SubmitPlugin({
+  submitType,
+  fetcher,
+  toggleOpenState,
+}: SubmitProps) {
   const [editor] = useLexicalComposerContext();
 
   function handleSubmit() {
@@ -35,6 +40,7 @@ export default function SubmitPlugin({ submitType, fetcher }: SubmitProps) {
   return (
     <div>
       <button onClick={handleSubmit}>Reply</button>
+      <button onClick={toggleOpenState}>close</button>
     </div>
   );
 }

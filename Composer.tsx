@@ -22,7 +22,7 @@ export default function Composer({
     <>
       <LexicalComposer initialConfig={initialConfig}>
         <HistoryPlugin />
-        <div className="relative border rounded-sm border-slate-900">
+        <div className="relative border-b border-b-slate-300">
           <Editor />
         </div>
         <SubmitPlugin

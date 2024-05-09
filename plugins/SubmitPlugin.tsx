@@ -10,12 +10,14 @@ export type SubmitProps = {
   submitType: "html" | "markdown";
   fetcher: CustomFetcher;
   toggleOpenState?: () => void;
+  replyToPostNumber?: number;
 };
 
 export default function SubmitPlugin({
   submitType,
   fetcher,
   toggleOpenState,
+  replyToPostNumber,
 }: SubmitProps) {
   const [editor] = useLexicalComposerContext();
 
@@ -33,14 +35,24 @@ export default function SubmitPlugin({
       }
       const formData = new FormData();
       formData.append(submitType, generated);
+      if (replyToPostNumber) {
+        formData.append("replyToPostNumber", String(replyToPostNumber));
+      }
       fetcher.submit(formData, { method: "POST" });
     });
   }
 
   return (
-    <div>
-      <button onClick={handleSubmit}>Reply</button>
-      <button onClick={toggleOpenState}>close</button>
+    <div className="flex p-2 align-center">
+      <button
+        className="px-2 py-1 border rounded-sm border-slate-700"
+        onClick={handleSubmit}
+      >
+        Reply
+      </button>
+      <button className="mx-2" onClick={toggleOpenState}>
+        close
+      </button>
     </div>
   );
 }

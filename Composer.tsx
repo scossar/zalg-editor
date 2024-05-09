@@ -9,6 +9,7 @@ export default function Composer({
   submitType,
   fetcher,
   toggleOpenState,
+  replyToPostNumber,
 }: SubmitProps) {
   const initialConfig = {
     namespace: "Zalgorithm",
@@ -29,6 +30,7 @@ export default function Composer({
           submitType={submitType}
           fetcher={fetcher}
           toggleOpenState={toggleOpenState}
+          replyToPostNumber={replyToPostNumber}
         />
       </LexicalComposer>
     </>

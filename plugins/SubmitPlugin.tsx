@@ -10,7 +10,7 @@ export type SubmitProps = {
   submitType: "html" | "markdown";
   fetcher: CustomFetcher;
   toggleOpenState?: () => void;
-  replyToPostNumber?: number;
+  replyToPostNumber?: string;
 };
 
 export default function SubmitPlugin({
@@ -36,7 +36,7 @@ export default function SubmitPlugin({
       const formData = new FormData();
       formData.append(submitType, generated);
       if (replyToPostNumber) {
-        formData.append("replyToPostNumber", String(replyToPostNumber));
+        formData.append("replyToPostNumber", replyToPostNumber);
       }
       fetcher.submit(formData, { method: "POST" });
     });

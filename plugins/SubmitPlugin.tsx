@@ -9,7 +9,7 @@ export interface CustomFetcher {
 export type SubmitProps = {
   submitType: "html" | "markdown";
   fetcher: CustomFetcher;
-  toggleOpenState?: () => void;
+  toggleOpenState: () => void;
   replyToPostNumber?: string;
 };
 
@@ -39,6 +39,7 @@ export default function SubmitPlugin({
         formData.append("replyToPostNumber", replyToPostNumber);
       }
       fetcher.submit(formData, { method: "POST" });
+      toggleOpenState();
     });
   }
 
